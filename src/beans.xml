@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+      <!--   default-autowire="default" -->
+
+<!-- name和id 均可    但是name可以带入特殊字符-->
+
+	<bean name="userService" class="com.shsxt.service.UserService"  scope="prototype" init-method="init" destroy-method="destroy">
+		<property name="dao" ref="userDao"/>
+
+	</bean>
+	<bean name="userDao" class="com.shsxt.dao.impl.UserDaoImpl"/>
+
+</beans>
